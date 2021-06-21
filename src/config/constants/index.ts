@@ -8,6 +8,8 @@ export const HOST = process.env.API_HOST || 'hhttp://dev-api.maengmung.site';
 
 export const AWESOME_BOT_MONGODB_URI = process.env.AWESOME_BOT_MONGODB_URI;
 export const SUPER_MARKET_MONGODB_URI = process.env.SUPER_MARKET_MONGODB_URI;
+export const MS_MONGODB_URI = process.env.MS_MONGODB_URI;
+
 export const EDITOR_URI = process.env.EDITOR_URI;
 
 export const API_V1_URL = '/api/v1';

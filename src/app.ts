@@ -31,7 +31,7 @@ import {
 } from './config/constants';
 
 // 인증 middleware
-import { ensureAuth, ensureGuest } from './middleware/auth';
+import { ensureAuth } from './middleware/auth';
 
 import './utils/mongoose/index';
 import './models/mongoose/awesomebot/Member';
@@ -43,9 +43,6 @@ import './utils/auth/passportGoogle';
 // api routers
 import v1AuthApiRouter from './routers/api/v1/supermarket/auth';
 import v1MemberApiRouter from './routers/api/v1/supermarket/member';
-
-/** callback 역할에 대해 물어보기 -> su */
-// import callback from './routers/callback/index';
 
 // Create Express server
 const app = express();

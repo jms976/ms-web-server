@@ -30,8 +30,6 @@ require("./utils/auth/passportGoogle");
 // api routers
 const auth_2 = __importDefault(require("./routers/api/v1/supermarket/auth"));
 const member_1 = __importDefault(require("./routers/api/v1/supermarket/member"));
-/** callback 역할에 대해 물어보기 -> su */
-// import callback from './routers/callback/index';
 // Create Express server
 const app = express_1.default();
 // 보안.
