@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "asb-enduser-dev",
+      "script": "./dist/bin/www.js",
+      "watch": false,
+      "ignore_watch": ["node_modules", ".git", "logs", "debug.log"],
+      "instances": "2",
+      "exec_mode": "cluster",
+      "log_date_format": "YYYY-MM-DD HH:mm Z"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+paths:  
+  /member:
+    get:
+      summary: 모든 고객정보 가져오기
+      security:
+        - BearerAuth: []
+      tags:
+        - Member
+      parameters:
+        - name: sort
+          in: query
+          schema:
+            type: string
+      responses:
+        200:
+          description: Success
+  /member/{memberId}:
+    get:
+      summary: 특정 고객정보 가져오기
+      security:
+        - BearerAuth: []
+      tags:
+        - Member
+      parameters:
+        - name: memberId
+          in: path
+          schema:
+            type: string
+            required: true
+      responses:
+        200:
+          description: Success
+    /member/{memberId}/state:
+    put:
+      summary: 고객 사용여부 변경.
+      security:
+        - BearerAuth: []
+      tags:
+        - Member
+      parameters:
+        - name: memberId
+          in: path
+          schema:
+            type: string
+            required: true
+        - name: state
+          in: query
+          schema:
+            type: string
+            required: true
+            enum: ['enabled', 'disabled']
+            default: 'enabled'
+      responses:
+        200:
+          description: Success
+  /member/{memberId}/license:
+    put:
+      summary: 고객 라이센스 변경.
+      security:
+        - BearerAuth: []
+      tags:
+        - Member
+      parameters:
+        - name: memberId
+          in: path
+          schema:
+            type: string
+            required: true
+        - name: license
+          in: query
+          schema:
+            type: string
+            required: true
+            enum: ['basic','standard','premium','unlimited']
+            default: 'basic'
+      responses:
+        200:
+          description: Success
+  /member/{memberId}/config:
+    put:
+      tags:
+        - Member
+      summary: 멤버의 설정 변경.
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: memberId
+          in: path
+          schema:
+            type: string
+            required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                isRating:
+                  type: boolean
+                  required: true
+                  example: false
+                isSession:
+                  type: boolean
+                  required: true
+                  example: false
+      responses:
+        200:
+          description: 'Success'
