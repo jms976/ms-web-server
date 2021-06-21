@@ -1,7 +1,7 @@
 import express from 'express';
 import passport from 'passport';
 
-import { API_V1_URL, SUPER_MARKET_EDITOR_URI } from '../../../../config/constants';
+import { API_V1_URL, EDITOR_URI } from '../../../../config/constants';
 
 const router = express.Router();
 
@@ -15,8 +15,8 @@ router.get(
 router.get(
   '/login/callback',
   passport.authenticate('google', {
-    failureRedirect: SUPER_MARKET_EDITOR_URI + '/login/fail',
-    successRedirect: SUPER_MARKET_EDITOR_URI + '/login/success',
+    failureRedirect: EDITOR_URI + '/login/fail',
+    successRedirect: EDITOR_URI + '/login/success',
     failureFlash: true,
   }),
   (req, res) => {

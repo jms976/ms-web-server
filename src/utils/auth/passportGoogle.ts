@@ -3,7 +3,7 @@ import GoogleStrategy from 'passport-google-oauth20';
 
 import AdminstratorModel from '../../models/mongoose/supermarket/Adminstrator';
 
-import { GOOGLE_OAUTH_ID, GOOGLE_OAUTH_KEY, SUPER_MARKET_EDITOR_URI } from '../../config/constants';
+import { GOOGLE_OAUTH_ID, GOOGLE_OAUTH_KEY, EDITOR_URI } from '../../config/constants';
 
 interface GoogleAuthProps {
   sub: string;

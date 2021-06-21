@@ -11,8 +11,8 @@ router.get('/login', passport_1.default.authenticate('google', {
     scope: ['profile', 'email'],
 }));
 router.get('/login/callback', passport_1.default.authenticate('google', {
-    failureRedirect: constants_1.SUPER_MARKET_EDITOR_URI + '/login/fail',
-    successRedirect: constants_1.SUPER_MARKET_EDITOR_URI + '/login/success',
+    failureRedirect: constants_1.EDITOR_URI + '/login/fail',
+    successRedirect: constants_1.EDITOR_URI + '/login/success',
     failureFlash: true,
 }), (req, res) => {
     res.send('Thank you for signing in!');

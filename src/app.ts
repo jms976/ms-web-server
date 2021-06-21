@@ -26,7 +26,7 @@ import {
   CLIENT_BASE_URL,
   SUPERMARKET_API_DOC_URL,
   GOOGLE_OAUTH_KEY,
-  SUPER_MARKET_EDITOR_URI,
+  EDITOR_URI,
   SUPER_MARKET_MONGODB_URI,
 } from './config/constants';
 
@@ -51,7 +51,7 @@ import v1MemberApiRouter from './routers/api/v1/supermarket/member';
 const app = express();
 
 // 보안.
-app.use(cors({ origin: [SUPER_MARKET_EDITOR_URI], credentials: true }));
+app.use(cors({ origin: [EDITOR_URI], credentials: true }));
 app.use(helmet());
 app.enable('trust proxy');
 

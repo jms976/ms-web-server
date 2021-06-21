@@ -35,10 +35,9 @@ const member_1 = __importDefault(require("./routers/api/v1/supermarket/member"))
 // Create Express server
 const app = express_1.default();
 // 보안.
-app.use(cors_1.default({ origin: [constants_1.SUPER_MARKET_EDITOR_URI, 'http://192.168.1.137:8989'], credentials: true }));
-// app.use(cors());
+app.use(cors_1.default({ origin: [constants_1.EDITOR_URI], credentials: true }));
 app.use(helmet_1.default());
-// app.enable('trust proxy');
+app.enable('trust proxy');
 // user agent
 app.use(express_useragent_1.default.express());
 app.use(constants_1.API_V1_URL, express_rate_limit_1.default({
