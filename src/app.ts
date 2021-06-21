@@ -51,7 +51,8 @@ import v1MemberApiRouter from './routers/api/v1/supermarket/member';
 const app = express();
 
 // 보안.
-app.use(cors({ origin: [SUPER_MARKET_EDITOR_URI, 'http://192.168.1.137:8989'], credentials: true }));
+// app.use(cors({ origin: [SUPER_MARKET_EDITOR_URI, 'http://192.168.1.137:8989'], credentials: true }));
+app.use(cors());
 app.use(helmet());
 app.enable('trust proxy');
 
