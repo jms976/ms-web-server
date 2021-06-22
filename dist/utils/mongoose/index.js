@@ -8,6 +8,5 @@ const connection_1 = __importDefault(require("./connection"));
 exports.default = {
     awesomebot: new connection_1.default(constants_1.AWESOME_BOT_MONGODB_URI).connect,
     supermarket: new connection_1.default(constants_1.SUPER_MARKET_MONGODB_URI).connect,
-    msWeb: new connection_1.default(constants_1.MS_MONGODB_URI).connect,
 };
 //# sourceMappingURL=index.js.map
