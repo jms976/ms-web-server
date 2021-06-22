@@ -13,7 +13,7 @@
     "build": "npm run build-ts && npm run lint && npm run copy-static-assets",
     "build:local": "cp .env.local .env && npm run build-ts && npm run lint && npm run copy-static-assets",
     "build:dev": "cp .env.develop .env && npm run build-ts && npm run lint && npm run copy-static-assets",
-    "build:stg": "cp .env.stg .env && npm run build-ts && npm run lint && npm run copy-static-assets",
+    "build:remote": "cp .env.local .env && npm run build-ts && npm run lint && npm run copy-static-assets; scp -r dist root@13.209.63.158:/home/msBlog/ms-web-server",
     "build:product": "cp .env.product .env && npm run build-ts && npm run lint && npm run copy-static-assets",
     "serve": "node dist/bin/www.js",
     "watch-node": "nodemon dist/bin/www.js",
