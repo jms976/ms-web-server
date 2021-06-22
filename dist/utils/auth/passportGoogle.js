@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const passport_1 = __importDefault(require("passport"));
 const passport_google_oauth20_1 = __importDefault(require("passport-google-oauth20"));
-const Adminstrator_1 = __importDefault(require("../../models/mongoose/supermarket/Adminstrator"));
+const Adminstrator_1 = __importDefault(require("../../models/mongoose/msBlog/Adminstrator"));
 const constants_1 = require("../../config/constants");
 passport_1.default.use(new passport_google_oauth20_1.default.Strategy({
     clientID: constants_1.GOOGLE_OAUTH_ID,

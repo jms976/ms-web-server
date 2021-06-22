@@ -1,6 +1,5 @@
 import { Types } from 'mongoose';
-// import Member from '../../models/mongoose/awesomebot/Member';
-import MemberModel, { MemberDocument } from '../../models/mongoose/awesomebot/Member';
+import MemberModel, { MemberDocument } from '../../models/mongoose/msBlog/Member';
 
 export default class Member {
   static async getMemberList() {

@@ -23,8 +23,8 @@ const constants_1 = require("./config/constants");
 // 인증 middleware
 const auth_1 = require("./middleware/auth");
 require("./utils/mongoose/index");
-require("./models/mongoose/awesomebot/Member");
-require("./models/mongoose/supermarket/Adminstrator");
+require("./models/mongoose/msBlog/Member");
+require("./models/mongoose/msBlog/Adminstrator");
 ////
 require("./utils/auth/passportGoogle");
 // api routers
@@ -45,7 +45,7 @@ app.use(constants_1.API_V1_URL, express_rate_limit_1.default({
 app.use(express_session_1.default({
     secret: constants_1.GOOGLE_OAUTH_KEY,
     resave: true,
-    store: connect_mongo_1.default.create({ mongoUrl: constants_1.SUPER_MARKET_MONGODB_URI }),
+    store: connect_mongo_1.default.create({ mongoUrl: constants_1.MS_MONGODB_URI }),
 }));
 app.use(passport_1.default.initialize()); // passport 구동
 app.use(passport_1.default.session());

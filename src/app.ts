@@ -28,14 +28,15 @@ import {
   GOOGLE_OAUTH_KEY,
   EDITOR_URI,
   SUPER_MARKET_MONGODB_URI,
+  MS_MONGODB_URI,
 } from './config/constants';
 
 // 인증 middleware
 import { ensureAuth } from './middleware/auth';
 
 import './utils/mongoose/index';
-import './models/mongoose/awesomebot/Member';
-import './models/mongoose/supermarket/Adminstrator';
+import './models/mongoose/msBlog/Member';
+import './models/mongoose/msBlog/Adminstrator';
 ////
 
 import './utils/auth/passportGoogle';
@@ -67,7 +68,7 @@ app.use(
   session({
     secret: GOOGLE_OAUTH_KEY,
     resave: true,
-    store: mongoStore.create({ mongoUrl: SUPER_MARKET_MONGODB_URI }),
+    store: mongoStore.create({ mongoUrl: MS_MONGODB_URI }),
   }),
 );
 
