@@ -26,9 +26,10 @@ passport_1.default.use(new passport_google_oauth20_1.default.Strategy({
         fullName: `${profile.name.givenName} ${profile.name.familyName}`,
         email: profile.emails[0].value,
         picture: profile.photos[0].value,
-        googleId: profile.id,
+        kakaoId: profile.id,
+        provider: 'google',
     };
-    const user = yield Adminstrator_1.default.findOneOrCreate({ condition: { googleId: profile.id }, doc: defaultUser }).catch((err) => {
+    const user = yield Adminstrator_1.default.findOneOrCreate({ condition: { kakaoId: profile.id }, doc: defaultUser }).catch((err) => {
         console.log('Error signing up', err);
         cb(err, null);
     });

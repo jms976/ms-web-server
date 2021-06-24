@@ -13,8 +13,25 @@ router.get(
 );
 
 router.get(
+  '/kakao/login',
+  passport.authenticate('kakao'),
+);
+
+router.get(
   '/login/callback',
   passport.authenticate('google', {
+    failureRedirect: EDITOR_URI + '/login/fail',
+    successRedirect: EDITOR_URI + '/login/success',
+    failureFlash: true,
+  }),
+  (req, res) => {
+    res.send('Thank you for signing in!');
+  },
+);
+
+router.get(
+  '/kakao/login/callback',
+  passport.authenticate('kakao', {
     failureRedirect: EDITOR_URI + '/login/fail',
     successRedirect: EDITOR_URI + '/login/success',
     failureFlash: true,

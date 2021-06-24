@@ -24,9 +24,10 @@ passport.use(
         fullName: `${profile.name.givenName} ${profile.name.familyName}`,
         email: profile.emails[0].value,
         picture: profile.photos[0].value,
-        googleId: profile.id,
+        kakaoId: profile.id,
+        provider: 'google',
       };
-      const user = await AdminstratorModel.findOneOrCreate({ condition: { googleId: profile.id }, doc: defaultUser }).catch((err: any) => {
+      const user = await AdminstratorModel.findOneOrCreate({ condition: { kakaoId: profile.id }, doc: defaultUser }).catch((err: any) => {
         console.log('Error signing up', err);
         cb(err, null);
       });

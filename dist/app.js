@@ -27,6 +27,7 @@ require("./models/mongoose/msBlog/Member");
 require("./models/mongoose/msBlog/Adminstrator");
 ////
 require("./utils/auth/passportGoogle");
+require("./utils/auth/passportKakao");
 // api routers
 const auth_2 = __importDefault(require("./routers/api/v1/supermarket/auth"));
 const member_1 = __importDefault(require("./routers/api/v1/supermarket/member"));
@@ -57,7 +58,7 @@ app.use(morgan_1.default('dev'));
 app.use(compression_1.default());
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
-// app.use(favicon(path.join(__dirname, '../public', 'favicon/favicon.ico')));
+app.use(serve_favicon_1.default(path_1.default.join(__dirname, '../public', 'favicon/favicon.ico')));
 app.use(express_1.default.static(path_1.default.join(__dirname, '../public'), { maxAge: 31557600000 }));
 app.use('/auth', auth_2.default);
 app.use(constants_1.API_V1_URL + constants_1.CLIENT_BASE_URL + '/member', auth_1.ensureAuth, member_1.default);

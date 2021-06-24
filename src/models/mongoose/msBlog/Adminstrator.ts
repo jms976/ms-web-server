@@ -8,8 +8,10 @@ interface IAdminType {
   fullName: string;
   email: string;
   password: string;
-  googleId: string;
+  googleId?: string;
+  kakaoId?: string;
   pictuer: string;
+  provider?: string;
 }
 
 export interface AdminstratorDocument extends IAdminType, mongoose.Document {}
@@ -24,7 +26,9 @@ const AdminstratorSchema = new Schema<AdminstratorDocument>(
     email: String,
     password: String,
     googleId: String,
+    kakaoId: String,
     picture: String,
+    provider: String,
   },
   {
     timestamps: true,
