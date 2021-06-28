@@ -27,7 +27,6 @@ import {
   SUPERMARKET_API_DOC_URL,
   GOOGLE_OAUTH_KEY,
   EDITOR_URI,
-  SUPER_MARKET_MONGODB_URI,
   MS_MONGODB_URI,
 } from './config/constants';
 

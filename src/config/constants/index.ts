@@ -15,7 +15,7 @@ export const EDITOR_URI = process.env.EDITOR_URI;
 export const API_V1_URL = '/api/v1';
 export const REQUEST_LIMIT_TIME = 5000;
 export const REQUEST_LIMIT_COUNT = 300;
-export const CLIENT_BASE_URL = '/supermarket';
+export const CLIENT_BASE_URL = '/msweb';
 export const API_DOC_PATH = '/api_docs';
 
 export const GOOGLE_OAUTH_ID = process.env.GOOGLE_OAUTH_ID;
