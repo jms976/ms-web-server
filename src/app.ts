@@ -36,7 +36,7 @@ import { ensureAuth } from './middleware/auth';
 import './utils/mongoose/index';
 import './models/mongoose/msBlog/Member';
 import './models/mongoose/msBlog/Adminstrator';
-import './models/mongoose/msBlog/CommentList';
+import './models/mongoose/msBlog/Commentlist';
 ////
 
 import './utils/auth/passportGoogle';

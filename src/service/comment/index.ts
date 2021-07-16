@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
-import CommentListModel, { CommentListDocument } from '../../models/mongoose/msBlog/CommentList';
+import CommentListModel, { CommentListDocument } from '../../models/mongoose/msBlog/Commentlist';
 
 export default class Comment {
   static async saveComment(data: any) {

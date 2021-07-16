@@ -25,7 +25,7 @@ const auth_1 = require("./middleware/auth");
 require("./utils/mongoose/index");
 require("./models/mongoose/msBlog/Member");
 require("./models/mongoose/msBlog/Adminstrator");
-require("./models/mongoose/msBlog/CommentList");
+require("./models/mongoose/msBlog/Commentlist");
 ////
 require("./utils/auth/passportGoogle");
 require("./utils/auth/passportKakao");
