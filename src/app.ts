@@ -36,6 +36,7 @@ import { ensureAuth } from './middleware/auth';
 import './utils/mongoose/index';
 import './models/mongoose/msBlog/Member';
 import './models/mongoose/msBlog/Adminstrator';
+import './models/mongoose/msBlog/CommentList';
 ////
 
 import './utils/auth/passportGoogle';
@@ -44,6 +45,7 @@ import './utils/auth/passportKakao';
 // api routers
 import v1AuthApiRouter from './routers/api/v1/supermarket/auth';
 import v1MemberApiRouter from './routers/api/v1/supermarket/member';
+import v1CommentApiRouter from './routers/api/v1/msBlog/comment';
 
 // Create Express server
 const app = express();
@@ -91,6 +93,7 @@ app.use(express.static(path.join(__dirname, '../public'), { maxAge: 31557600000 
 
 app.use('/auth', v1AuthApiRouter);
 app.use(API_V1_URL + CLIENT_BASE_URL + '/member', ensureAuth, v1MemberApiRouter);
+app.use(API_V1_URL + CLIENT_BASE_URL + '/comment', v1CommentApiRouter);
 
 import { v1SwaggerSupermarketSpec, cusOptions } from './config/swagger';
 

@@ -25,12 +25,14 @@ const auth_1 = require("./middleware/auth");
 require("./utils/mongoose/index");
 require("./models/mongoose/msBlog/Member");
 require("./models/mongoose/msBlog/Adminstrator");
+require("./models/mongoose/msBlog/CommentList");
 ////
 require("./utils/auth/passportGoogle");
 require("./utils/auth/passportKakao");
 // api routers
 const auth_2 = __importDefault(require("./routers/api/v1/supermarket/auth"));
 const member_1 = __importDefault(require("./routers/api/v1/supermarket/member"));
+const comment_1 = __importDefault(require("./routers/api/v1/msBlog/comment"));
 // Create Express server
 const app = express_1.default();
 // 보안.
@@ -62,6 +64,7 @@ app.use(serve_favicon_1.default(path_1.default.join(__dirname, '../public', 'fav
 app.use(express_1.default.static(path_1.default.join(__dirname, '../public'), { maxAge: 31557600000 }));
 app.use('/auth', auth_2.default);
 app.use(constants_1.API_V1_URL + constants_1.CLIENT_BASE_URL + '/member', auth_1.ensureAuth, member_1.default);
+app.use(constants_1.API_V1_URL + constants_1.CLIENT_BASE_URL + '/comment', comment_1.default);
 const swagger_1 = require("./config/swagger");
 // 스웨거 설정.
 app.use(serve_favicon_1.default(path_1.default.join(__dirname, '../public', 'favicon/favicon.ico')));
