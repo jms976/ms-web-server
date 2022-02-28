@@ -9,7 +9,7 @@
   "author": "ms@happytalk.io",
   "license": "MIT",
   "scripts": {
-    "start": "export PORT=8899 && npm run serve",
+    "start": "export PORT=18899 && npm run serve",
     "build": "npm run build-ts && npm run lint && npm run copy-static-assets",
     "build:local": "cp .env.local .env && npm run build-ts && npm run lint && npm run copy-static-assets",
     "build:dev": "cp .env.develop .env && npm run build-ts && npm run lint && npm run copy-static-assets",

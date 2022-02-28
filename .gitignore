@@ -41,3 +41,7 @@ yarn.lock
 
 .vscode
 .github
+
+/.env.local
+/.env.develop
+/.env
